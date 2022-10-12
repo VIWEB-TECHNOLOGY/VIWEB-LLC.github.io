@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GAG</title>
+</head>
+<body>
+<p id="address"></p>
+
+<script>
+    const streets = {
+        streetTypeNumbers: [
+            'Đường số 1',
+            'Đường số 2',
+            'Đường số 3',
+            'Đường số 4',
+            'Đường số 5',
+            'Đường số 6',
+            'Đường số 7',
+            'Đường số 8',
+            'Đường số 9',
+            'Đường số 10',
+            'Đường số 11',
+            'Đường số 12'
+        ],
+        streetTypeNames: [
+            'Đường Dương Quảng Hàm',
+            'Đường Trần Bá Giao'
+        ]
+    };
+
+    let addressLine1 = '';
+    const addressLine2 = 'Phường 5, Quận Gò Vấp';
+    const addressLine3 = 'TPHCM 70000';
+
+    const ranNDigits = (n) => {
+        return Math.floor(Math.random() * (9 * (Math.pow(10, n-1)))) + (Math.pow(10, n-1));
+    }
+
+    const ranNAlphabets = (n) => {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const charactersLength = characters.length;
+        for (let i = 0; i < n; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    }
+
+    const ranArrValue = function (items) {
+        return items[Math.floor(Math.random() * items.length)];
+    }
+
+    const streetName = ranArrValue(streets.streetTypeNumbers.concat(streets.streetTypeNames));
+    switch (true) {
+        case streets.streetTypeNumbers.includes(streetName):
+            addressLine1 += `${ranNDigits(5)}${ranNAlphabets(1)}${ranNDigits(2)} ${streetName}`;
+            break;
+        case streets.streetTypeNames.includes(streetName):
+            addressLine1 += `${ranNDigits(1)}${ranNAlphabets(1)}${ranNDigits(2)}/${ranNDigits(3)}/${ranNDigits(3)} ${streetName}`;
+            break;
+        default:
+            break;
+    }
+
+    let addressElm = document.getElementById('address');
+
+    addressElm.append(addressLine1);
+    addressElm.append(document.createElement("br"));
+    addressElm.append(addressLine2);
+    addressElm.append(document.createElement("br"));
+    addressElm.append(addressLine3);
+</script>
+</body>
+</html>
