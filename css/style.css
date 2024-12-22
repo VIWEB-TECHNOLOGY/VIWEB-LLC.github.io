@@ -1920,9 +1920,6 @@ input#nav-toggle:checked ~ #nav-menu {
 .mt-10 {
   margin-top: 2.5rem;
 }
-.mt-20 {
-  margin-top: 5rem;
-}
 .mt-4 {
   margin-top: 1rem;
 }
@@ -1964,9 +1961,6 @@ input#nav-toggle:checked ~ #nav-menu {
 .cursor-pointer {
   cursor: pointer;
 }
-.flex-nowrap {
-  flex-wrap: nowrap;
-}
 .items-start {
   align-items: flex-start;
 }
@@ -1983,9 +1977,6 @@ input#nav-toggle:checked ~ #nav-menu {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-}
-.break-keep {
-  word-break: keep-all;
 }
 .rounded {
   border-radius: 0.25rem;
